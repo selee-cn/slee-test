@@ -5,7 +5,7 @@ variable "Secret_access_key" {
   type = string
 }
 
-variable "region" {
+variable "availability_zone" {
  type = string
 }
 
@@ -16,3 +16,4 @@ variable "sub-tag" {
 variable "ec2-tag" {
  type = string
 }
+
