@@ -9,12 +9,12 @@ terraform {
 }
 
 provider "aws" {
-  region                  = var.region
+  region                  = "ap-northeast-2"
   access_key              = var.Access_key_ID
   secret_key              = var.Secret_access_key
 }
 resource "aws_default_subnet" "defaultsub" {
-  availability_zone = "ap-northeast-2a"
+  availability_zone = var.availability_zone
   tags = {
     Name = var.sub-tag
   }
