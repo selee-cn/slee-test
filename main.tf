@@ -9,20 +9,20 @@ terraform {
 }
 
 provider "aws" {
-  region                  = "ap-northeast-2"
+  region                  = var.region
   access_key              = var.Access_key_ID
   secret_key              = var.Secret_access_key
 }
 resource "aws_default_subnet" "defaultsub" {
   availability_zone = "ap-northeast-2a"
   tags = {
-    Name = "slee-subnet-tf"
+    Name = var.sub-tag
   }
 }
 resource "aws_instance" "ec2" {
   ami = "ami-025d56c3db270616c"
-  instance_type = "t2.micro"
+  instance_type = var.type
   tags = {
-    Name = "slee-instance-tf"
+    Name = var.ec2-tag
   }
 }
